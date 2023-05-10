@@ -1,0 +1,56 @@
+@startgantt
+/' Este diagrama de Gantt sigue el flujo del proceso de
+   creación de contenido en redes sociales de Shimoku.
+
+   https://drive.google.com/file/d/1KrOh1TQ-Yk4ndUU5rB7n4ff7L7_C5Ajz/view?usp=sharing
+
+   Algunas tareas estan comentadas y etiquetadas con 'condicional'
+   ya que dependen de una condición. Si consideras que son requeridas
+   simplemente descomentala.
+'/
+
+'No te olvides de poner la fecha de inicio'
+Project starts the 11th of may 2023
+
+'No se trabaja sábados y domingos'
+saturday are closed
+sunday are closed
+
+-- Parte 1: Creación del template --
+
+  'condicional'
+  /'[ Desarrollar contexto ] lasts 1 day
+  then [ Crear Diseño ] lasts 1 day'/
+
+  [Análisis del código de producción] as [ACP] lasts 1 day
+
+  /' Este es un ejemplo de como puedes incluir dos actividades
+  en un dia al inicio del proyecto '/
+  [ Creación de data fake ] as [CDF] lasts 1 day
+
+  /' then [ Creación de data fake ] as [CDF] lasts 1 day '/
+  then [ Adaptación/Creación del código \n al contexto ] lasts 2 day
+
+  /' Se ejecuta en paralelo '/
+  [ Probar/Plotear código ] starts at [ACP]'s end and lasts 2 day
+
+  /' Review process se ejecuta por defecto en paralelo '/
+  [ Review process ] as [RWP] starts at [ACP]'s end and lasts 2 day
+
+-- Parte 2: Creación del blog --
+
+  then [ Estructurar en secciones el blog ] as [ESB] lasts 1 day
+
+  /'Recuerda incluir en esta tarea el tiempo de hacer codigo
+    más legible'/
+  [ Redactar Explicación sobre el código ] starts at [RWP]'s end and lasts 2 day
+  note bottom
+  Incluye el tiempo de hacer código más legible
+  end note
+
+-- Parte 3: Creación del video --
+
+  then [ Crear script basado en blogpost ] lasts 1 days
+  then [ Realizar videos por partes ] lasts 1 days
+  then [ Editar video ] lasts 1 days
+@endgantt
